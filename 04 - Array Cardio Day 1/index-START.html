@@ -63,7 +63,7 @@
         console.warn(allTogether)   
     // 5. Sort the inventors by years lived
 
-    const byYearsLived = inventors.sort((inventorA, inventorB) => (inventorA.year + inventorA.passed) - (inventorB.year + inventorB.passed))
+    const byYearsLived = inventors.sort((inventorA, inventorB) => (inventorA.passed - inventorA.year ) - (inventorB.passed - inventorB.year))
     console.table(byYearsLived)
 
 
