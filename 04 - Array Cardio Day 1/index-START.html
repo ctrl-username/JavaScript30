@@ -71,16 +71,23 @@
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
         
     // reference to container 
-     const category = document.querySelector('.mw-category') 
+    // const category = document.querySelector('.mw-category') 
     // call query selector agains the category element to get the sub link elements while converting node list to array
-    const links = Array.from(category.querySelectorAll('a'))
+    // const links = Array.from(category.querySelectorAll('a'))
     // get textcontents of links and filter return only the ones containing de
-    const de = links.map(link => link.textContent).filter(streetname => streetname.includes("de"));
+    // const de = links.map(link => link.textContent).filter(streetname => streetname.includes("de"));
 
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-
+    const alpha = people.sort((firstOne, lastOne) => {
+        const [aLast, aFirst] = firstOne.split(', ')
+        
+        const [bLast, bFirst] = lastOne.split(', ')
+        return aLast > bLast ? 1 : -1
+    })
+    console.table(alpha)
+        
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
